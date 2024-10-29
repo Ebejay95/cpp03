@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:12:15 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/28 13:33:07 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/10/29 09:48:09 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,26 @@ ClapTrap::~ClapTrap() {
 }
 
 void	ClapTrap::attack(const std::string& target) {
-	if (this->energy_points <= 0 || this->hit_points <= 0)
+	if (this->energy_points <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " would require more energy to attack." << std::endl;
 		return ;
+	}
+	if (this->hit_points <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " can only attack if alive" << std::endl;
+		return ;
+	}
 	this->energy_points--;
 	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attack_damage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (this->hit_points <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " can only take damage if alive" << std::endl;
 		return ;
+	}
 	this->hit_points = this->hit_points - amount;
 	if (this->hit_points < 0)
 		this->hit_points = 0;

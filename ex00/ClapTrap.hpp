@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:12:25 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/28 13:22:17 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/10/29 09:44:06 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class ClapTrap {
 	private:
 		std::string		name;
-		int				hit_points;
-		int				energy_points;
-		int				attack_damage;
+		unsigned int	hit_points;
+		unsigned int	energy_points;
+		unsigned int	attack_damage;
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
