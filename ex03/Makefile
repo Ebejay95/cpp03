@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 17:22:24 by jeberle           #+#    #+#              #
-#    Updated: 2024/10/29 17:24:40 by jeberle          ###   ########.fr        #
+#    Updated: 2024/10/29 19:12:26 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ NAME=now_its_weird
 #------------------------------------------------------------------------------#
 
 CC=c++
-CFLAGS=-Wall -Wextra -Werror -std=c++98
+CFLAGS=-Wall -Wextra -Werror -Wshadow -std=c++98
 LDFLAGS=
 
 ifeq ($(DEBUG), 1)
