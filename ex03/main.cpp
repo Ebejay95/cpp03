@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:22:23 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/29 17:23:56 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/10/29 22:46:12 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,43 @@ int main(void)
 			friendly.attack("dummy");
 		}
 		friendly.highFivesGuys();
+	}
+	printSeparator();
+	std::cout << "TESTING DIAMONDTRAP:" << std::endl;
+	{
+		std::cout << "\nTesting Constructors:" << std::endl;
+		DiamondTrap d1;
+		DiamondTrap d2("Diamond");
+		DiamondTrap d3(d2);
+
+		std::cout << "\nTesting Functionality:" << std::endl;
+		d2.whoAmI();
+		d2.attack("target");
+		d2.guardGate();
+		d2.highFivesGuys();
+
+		std::cout << "\nTesting Combat:" << std::endl;
+		d2.attack("enemy");
+		d2.takeDamage(30);
+		d2.beRepaired(20);
+		d2.whoAmI();
+
+		std::cout << "\nTesting Energy Depletion:" << std::endl;
+		for (int i = 0; i < 52; i++) {
+			if (i % 10 == 0) {
+				std::cout << "\nAttempt " << i + 1 << ":" << std::endl;
+			}
+			d2.attack("dummy");
+		}
+		d2.whoAmI();
+
+		std::cout << "\nTesting Death Scenario:" << std::endl;
+		d2.takeDamage(200);
+		d2.attack("target");
+		d2.beRepaired(50);
+		d2.guardGate();
+		d2.highFivesGuys();
+		d2.whoAmI();
 	}
 	printSeparator();
 	std::cout << "END OF TESTS - Destructors will be called:" << std::endl;
